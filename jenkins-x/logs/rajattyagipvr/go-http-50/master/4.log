@@ -1,0 +1,30 @@
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-f2wp6[0m
+{"level":"warn","ts":1596041993.3783114,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1596041993.3822825,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-459zd[0m
+{"level":"warn","ts":1596041994.363127,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1596041994.3721297,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-rajattyagipvr-go-http-50-master-dl68n-qmxtp[0m
+{"level":"warn","ts":1596042064.6883845,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1596042066.7480588,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*************/go-http-50.git @ v0.0.4 in path /workspace/source"}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:c1a89083c792bf168c6f3ab9600b1fb4a18f81a0
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Cloning the Jenkins X versions repo https://github.com/*************/jenkins-x-versions.git with ref refs/heads/master to /home/.**/jenkins-x-versions
+Generated Git credentials file /home/.config/git/credentials
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/go-http-50 main.go
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-dl68n-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "index.docker.io//702769831180/go-http-50:0.0.4": UNAUTHORIZED: authentication required; [map[Type:repository Class: Name:702769831180/go-http-50 Action:pull]]
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m

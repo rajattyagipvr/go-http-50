@@ -1,0 +1,83 @@
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-86tmw[0m
+{"level":"warn","ts":1597518105.0931466,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1597518105.093596,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-lnjch[0m
+{"level":"warn","ts":1597518106.109098,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1597518106.1103024,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-rajattyagipvr-go-http-50-master-bvdl8-vxrv2[0m
+{"level":"warn","ts":1597518182.4604769,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1597518184.6132214,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*************/go-http-50.git @ v0.0.8 in path /workspace/source"}
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Cloning the Jenkins X versions repo https://github.com/*************/jenkins-x-versions.git with ref refs/heads/master to /home/.**/jenkins-x-versions
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/go-http-50 main.go
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Resolved base name scratch to scratch        
+[36mINFO[0m[0000] Built cross stage deps: map[]                
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/go-http-50"]                   
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/08/15 19:03:22 pushed blob: sha256:333820caa94fcd601722a87acd4e37aa18e314804c9eb35667aaa1ff285404d0
+2020/08/15 19:03:23 pushed blob: sha256:69fa3d334e19db3b3fa73ef7fd90f3f733592da5af9289baf88464cb139ff710
+2020/08/15 19:03:23 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/go-http-50:0.0.8: digest: sha256:b88f6b3483d929a0f0cdb7a520d20e7e570cce3151a2ce59fefa4c2836824f67 size: 428
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/go-http-50 to an unshallow repository
+Generating change log from git ref d47664243c2e759cb3b679fced116f23e8cda7db => 0dbeb61998f81d38ed06f62a91866a2b8f44f637
+WARNING: No release found for *************/go-http-50 and tag v0.0.8 so creating a new release
+Updated the release information at https://github.com/*************/go-http-50/releases/tag/v0.0.8
+generated: /workspace/source/charts/go-http-50/templates/release.yaml
+Created Release go-http-50-0-0-8 resource in namespace **
+Updating PipelineActivity *************-go-http-50-master-8 with version 0.0.8
+Updated PipelineActivities *************-go-http-50-master-8 with release notes URL: https://github.com/*************/go-http-50/releases/tag/v0.0.8
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Uploading chart file go-http-50-0.0.8.tgz to http://bucketrepo/bucketrepo/charts/api/charts
+Received 200 response: 
+
+Showing logs for build [32mrajattyagipvr-go-http-50-master-bvdl8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+Cloning the Jenkins X versions repo https://github.com/*************/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app go-http-50 version 0.0.8 to namespace **-staging
+WARNING: could not find upstream git URL failed to unmarshal  due to no GitConfDir defined
+pushed merged branch promote-go-http-50-0.0.8
+Created Pull Request: https://github.com/*************/environment-cluster12-staging/pull/70
+Added label updatebot to Pull Request https://github.com/*************/environment-cluster12-staging/pull/70
+got git provider status pending from PR https://github.com/*************/environment-cluster12-staging/pull/70
+got git provider status pending from PR https://github.com/*************/environment-cluster12-staging/pull/70
+got git provider status pending from PR https://github.com/*************/environment-cluster12-staging/pull/70
+got git provider status pending from PR https://github.com/*************/environment-cluster12-staging/pull/70
+Pull Request https://github.com/*************/environment-cluster12-staging/pull/70 is merged at sha 68bbe178aaaa8d0c963ff1ca0373d275139490e6
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names go-http-50, **-go-http-50, **-staging-go-http-50
